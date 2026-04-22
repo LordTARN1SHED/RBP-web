@@ -357,7 +357,7 @@ button {
 .hero__tagline {
   max-width: none;
   margin: 0;
-  font-size: clamp(1.5rem, 1.1rem + 1.5vw, 2.4rem);
+  font-size: clamp(1.2rem, 0.9rem + 1.2vw, 2rem);
   line-height: 1.25;
   color: #4a9aac;
   text-shadow: 0 6px 18px rgba(24, 57, 66, 0.22);
@@ -386,8 +386,29 @@ button {
     filter 180ms ease;
 }
 
+.hero__cta {
+  background: linear-gradient(135deg, #f7e7da 0%, #dbb79b 100%);
+  border: 2px solid rgba(42, 22, 33, 0.15);
+  box-shadow:
+    0 24px 48px rgba(15, 10, 12, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  min-height: 3.8rem;
+  padding: 1.05rem 2rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
 .hero__cta:hover,
-.hero__cta:focus-visible,
+.hero__cta:focus-visible {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+  box-shadow:
+    0 32px 56px rgba(15, 10, 12, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  outline: none;
+}
+
 .button-primary:hover,
 .button-primary:focus-visible {
   transform: translateY(-1px);
@@ -451,9 +472,10 @@ button {
 
 .section-head__blurb {
   max-width: 38rem;
-  color: rgba(79, 79, 84, 0.84);
+  color: rgba(88, 88, 96, 0.72);
   font-family: "Manrope", sans-serif;
   letter-spacing: 0.01em;
+  line-height: 2;
 }
 
 .section-banner {
