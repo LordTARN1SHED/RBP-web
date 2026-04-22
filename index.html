@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Rainbow Petopia is a gentle digital memorial space for beloved companions and the memories that still matter."
+  />
+  <meta name="theme-color" content="#efe7dc" />
+  <title>Rainbow Petopia</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Forum&family=Manrope:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    // 必须内联、同步执行：在浏览器开始还原滚动位置之前就禁用它，
+    // 否则 defer 脚本跑到时用户已经看到被还原到 About 的中间视角。
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+  </script>
+  <script defer src="config.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="page-backdrop" aria-hidden="true">
+    <div class="page-backdrop__image"></div>
+    <div class="page-backdrop__glow page-backdrop__glow--left"></div>
+    <div class="page-backdrop__glow page-backdrop__glow--right"></div>
+    <div class="page-backdrop__veil"></div>
+  </div>
+
+  <header class="site-header" data-header>
+    <div class="site-header__shell">
+      <a class="brand" href="#top">Rainbow Petopia</a>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        data-menu-toggle
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+      <nav class="site-nav" id="site-nav" data-nav>
+        <a href="#top" data-nav-link>Home</a>
+        <a href="#about" data-nav-link>About Us</a>
+        <a href="#work" data-nav-link>Our Work</a>
+        <a href="#contact" data-nav-link>Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+  <div class="hero-stage">
+    <section class="hero section-anchor" id="home" data-section="home">
+      <div class="hero__frame">
+        <img
+          class="hero__image"
+          src="assets/images/hero.jpg"
+          alt=""
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div class="hero__scrim"></div>
+        <div class="hero__content">
+          <p class="hero__eyebrow">A place that does not rush remembrance</p>
+          <h1>Rainbow Petopia</h1>
+          <p class="hero__tagline">My Love for You Still Knows the Way Home.</p>
+          <a class="hero__cta" href="#about">Enter gently</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+    <section class="section section-anchor about" id="about" data-section="about">
+      <div class="section__shell">
+        <div class="section-banner section-banner--sky section-banner--about">
+          <img
+            class="section-banner__image"
+            src="assets/images/about.jpg"
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+          />
+          <div class="section-banner__veil"></div>
+          <div class="section-banner__content">
+            <h2>ABOUT US</h2>
+            <p class="section-banner__subcopy">My Love for You Still Knows the Way Home.</p>
+          </div>
+        </div>
+
+        <div class="about__copy">
+          <p class="about__stanza about__stanza--intro">
+            <span class="about__line about__line--rainbow">
+              <span class="rainbow-word" aria-label="Rainbow Petopia">
+                <span>R</span><span>a</span><span>i</span><span>n</span><span>b</span><span>o</span><span>w</span>
+                <span class="rainbow-word__gap"></span>
+                <span>P</span><span>e</span><span>t</span><span>o</span><span>p</span><span>i</span><span>a</span>
+              </span>
+            </span>
+            <span class="about__line about__line--medium">was born from a quiet thought —</span>
+            <span class="about__line about__line--small">Some lives leave our sight,</span>
+            <span class="about__line about__line--large">but what they leave behind often stays with us.</span>
+          </p>
+
+          <p class="about__stanza">
+            <span class="about__line about__line--small">They were pets,</span>
+            <span class="about__line about__line--xl">but also family, companions, and friends.</span>
+          </p>
+
+          <p class="about__stanza">
+            <span class="about__line about__line--small">When someone precious is gone,</span>
+            <span class="about__line">what remains is often not a single moment,</span>
+            <span class="about__line">but a</span>
+            <span class="about__line about__line--accent">collection of feelings —</span>
+            <span class="about__line">memories that surface unexpectedly,</span>
+            <span class="about__line">photos we return to when we are ready,</span>
+            <span class="about__line">words that continue to live inside us.</span>
+          </p>
+
+          <p class="about__stanza">
+            <span class="about__line">
+              <span class="rainbow-word" aria-label="Rainbow Petopia">
+                <span>R</span><span>a</span><span>i</span><span>n</span><span>b</span><span>o</span><span>w</span>
+                <span class="rainbow-word__gap"></span>
+                <span>P</span><span>e</span><span>t</span><span>o</span><span>p</span><span>i</span><span>a</span>
+              </span>
+              hopes to be a place like this:
+            </span>
+            <span class="about__line about__line--accent">a gentle world that does not rush you,</span>
+            <span class="about__line">a space where memories can stay,</span>
+            <span class="about__line">or rest, at their own pace.</span>
+          </p>
+
+          <p class="about__stanza">
+            <span class="about__line about__line--medium">Here,</span>
+            <span class="about__line">every beloved companion is not defined by an ending,</span>
+            <span class="about__line">but remembered through the moments that still matter —</span>
+            <span class="about__line about__line--large">quietly present, softly felt.</span>
+          </p>
+
+          <p class="about__stanza">
+            <span class="about__line">Through the</span>
+            <span class="about__line about__line--accent">digital world,</span>
+            <span class="about__line">we offer a place for remembrance to take shape,</span>
+            <span class="about__line">something you can return to, whenever you choose,</span>
+            <span class="about__line">in whatever way feels right to you.</span>
+          </p>
+
+          <p class="about__stanza">
+            <span class="about__line about__line--medium">We believe —</span>
+            <span class="about__line">love does not demand to be held tightly.</span>
+            <span class="about__line">It remains,</span>
+            <span class="about__line">sometimes close, sometimes distant,</span>
+            <span class="about__line about__line--large">always in its own way.</span>
+          </p>
+
+          <blockquote class="about__quote">
+            Thank you for the tenderness you gave me in this life. Now let me watch over you in the next.
+          </blockquote>
+          <p class="about__closing">
+            <span class="rainbow-inline" aria-label="On another planet">
+              <span class="rainbow-word" aria-hidden="true">
+                <span>O</span><span>n</span>
+              </span>
+              <span class="rainbow-word" aria-hidden="true">
+                <span>a</span><span>n</span><span>o</span><span>t</span><span>h</span><span>e</span><span>r</span>
+              </span>
+              <span class="rainbow-word" aria-hidden="true">
+                <span>p</span><span>l</span><span>a</span><span>n</span><span>e</span><span>t</span>
+              </span>
+            </span>,
+            my love for you still knows the way home.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-anchor work" id="work" data-section="work">
+      <div class="section__shell">
+        <div class="section-banner section-banner--sky section-banner--work">
+          <img
+            class="section-banner__image"
+            src="assets/images/about.jpg"
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+          />
+          <div class="section-banner__veil"></div>
+          <div class="section-banner__content">
+            <h2>OUR WORK</h2>
+            <p class="section-banner__subcopy">A world where memories can still be visited.</p>
+          </div>
+        </div>
+
+        <div class="section-head section-head--compact">
+          <p class="section-head__blurb">
+            A gentle world that does not rush you, a space where memories can stay, or rest, at their own pace.
+          </p>
+        </div>
+
+        <div class="work-gallery" role="list" aria-label="Memorial world previews">
+          <article class="work-card" role="listitem" tabindex="0" style="--card-image: url('assets/images/work-main-page.jpg')">
+            <div class="work-card__overlay"></div>
+            <div class="work-card__content">
+              <p class="work-card__index">01</p>
+              <h3>Main Page</h3>
+            </div>
+          </article>
+          <article class="work-card" role="listitem" tabindex="0" style="--card-image: url('assets/images/work-city-hall-inside.jpg')">
+            <div class="work-card__overlay"></div>
+            <div class="work-card__content">
+              <p class="work-card__index">02</p>
+              <h3>City Hall Inside</h3>
+            </div>
+          </article>
+          <article class="work-card" role="listitem" tabindex="0" style="--card-image: url('assets/images/work-city-hall-outside.png')">
+            <div class="work-card__overlay"></div>
+            <div class="work-card__content">
+              <p class="work-card__index">03</p>
+              <h3>City Hall Outside</h3>
+            </div>
+          </article>
+          <article class="work-card" role="listitem" tabindex="0" style="--card-image: url('assets/images/work-river-site.jpg')">
+            <div class="work-card__overlay"></div>
+            <div class="work-card__content">
+              <p class="work-card__index">04</p>
+              <h3>River Site</h3>
+            </div>
+          </article>
+          <article class="work-card" role="listitem" tabindex="0" style="--card-image: url('assets/images/work-world-tree.png')">
+            <div class="work-card__overlay"></div>
+            <div class="work-card__content">
+              <p class="work-card__index">05</p>
+              <h3>World Tree</h3>
+            </div>
+          </article>
+          <article class="work-card" role="listitem" tabindex="0" style="--card-image: url('assets/images/work-cottage.png')">
+            <div class="work-card__overlay"></div>
+            <div class="work-card__content">
+              <p class="work-card__index">06</p>
+              <h3>Cottage</h3>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-anchor contact" id="contact" data-section="contact">
+      <div class="section__shell">
+        <div class="section-banner section-banner--sky section-banner--contact">
+          <img
+            class="section-banner__image"
+            src="assets/images/about.jpg"
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+          />
+          <div class="section-banner__veil"></div>
+          <div class="section-banner__content">
+            <h2>CONTACT US</h2>
+            <p class="section-banner__subcopy">We are launching our application soon.</p>
+          </div>
+        </div>
+
+        <div class="section-head section-head--compact contact__header">
+          <p class="section-head__blurb">
+            If you would like to ask about Rainbow Petopia, memorial spaces, or early access to the upcoming application,
+            send us a note and we will get back to you.
+          </p>
+        </div>
+
+        <div class="contact__layout">
+          <div class="contact__intro">
+            <div class="contact__panel-copywrap">
+              <p class="contact__panel-label">Reach Out</p>
+              <p class="contact__panel-copy">
+                Ask about memorial spaces, early access, or anything you would like to know before the application opens.
+              </p>
+            </div>
+
+            <div class="contact-cards">
+              <a class="contact-card" href="mailto:connect@rainbowpetopia.com">
+                <span class="contact-card__label">Email</span>
+                <strong>connect@rainbowpetopia.com</strong>
+              </a>
+              <a class="contact-card" href="tel:+14088021197">
+                <span class="contact-card__label">Phone</span>
+                <strong>408-802-1197</strong>
+              </a>
+            </div>
+
+            <div class="contact__panel-copywrap">
+              <p class="contact__panel-label">Send a Note</p>
+              <p class="contact__panel-copy">
+                Tell us a little about what you are looking for, and we will reply as soon as we can.
+              </p>
+            </div>
+          </div>
+
+          <form class="contact-form" data-contact-form novalidate>
+            <div class="contact-form__row">
+              <label class="field">
+                <span>First Name</span>
+                <input type="text" name="firstName" autocomplete="given-name" />
+              </label>
+              <label class="field">
+                <span>Last Name</span>
+                <input type="text" name="lastName" autocomplete="family-name" />
+              </label>
+            </div>
+
+            <label class="field">
+              <span>Email</span>
+              <input type="email" name="email" autocomplete="email" required />
+            </label>
+
+            <label class="field">
+              <span>Message</span>
+              <textarea name="message" rows="6" required></textarea>
+            </label>
+
+            <div class="contact-form__actions">
+              <button class="button-primary" type="submit" data-submit-button>Send</button>
+              <p class="form-status" data-form-status aria-live="polite"></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__shell">
+      <p>Rainbow Petopia</p>
+      <p>&copy; <span data-year></span> Rainbow Petopia. Built for independent hosting.</p>
+    </div>
+  </footer>
+</body>
+</html>
