@@ -223,6 +223,34 @@
     window.addEventListener("scroll", updateSections, { passive: true });
   }
 
+  // About 长文字逐行淡入效果
+  const aboutCopy = document.querySelector(".about__copy");
+  if (aboutCopy && !reducedMotion) {
+    const aboutLines = Array.from(aboutCopy.querySelectorAll(".about__line"));
+
+    if ("IntersectionObserver" in window && aboutLines.length > 0) {
+      const lineObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const lines = Array.from(entry.target.querySelectorAll(".about__line"));
+              lines.forEach((line, index) => {
+                setTimeout(() => {
+                  line.classList.add("line-visible");
+                  line.style.animationDelay = `${index * 0.12}s`;
+                }, 0);
+              });
+              lineObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2, rootMargin: "0px 0px -50px 0px" }
+      );
+
+      lineObserver.observe(aboutCopy);
+    }
+  }
+
   const setStatus = (message, type) => {
     if (!formStatus) {
       return;

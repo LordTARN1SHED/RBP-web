@@ -410,11 +410,25 @@ button {
   outline: none;
 }
 
+.button-primary {
+  background: linear-gradient(135deg, #f7e7da 0%, #dbb79b 100%);
+  border: 2px solid rgba(42, 22, 33, 0.15);
+  box-shadow:
+    0 24px 48px rgba(15, 10, 12, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  color: #8B6F47;
+  min-height: 3.8rem;
+  padding: 1.05rem 2rem;
+  font-size: 0.95rem;
+}
+
 .button-primary:hover,
 .button-primary:focus-visible {
-  transform: translateY(-1px);
-  filter: brightness(1.02);
-  box-shadow: 0 22px 44px rgba(15, 10, 12, 0.18);
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+  box-shadow:
+    0 32px 56px rgba(15, 10, 12, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
   outline: none;
 }
 
@@ -584,6 +598,17 @@ button {
   display: block;
   font-size: clamp(1.08rem, 0.96rem + 0.26vw, 1.22rem);
   line-height: 1.92;
+}
+
+.about__copy .about__line {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: lineReveal 0.9s ease-out forwards;
+  animation-play-state: paused;
+}
+
+.about__copy .about__line.line-visible {
+  animation-play-state: running;
 }
 
 .about__line--rainbow {
@@ -1004,6 +1029,18 @@ button {
 
   to {
     transform: scale(1.08) translate3d(1%, 1.5%, 0);
+  }
+}
+
+@keyframes lineReveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
