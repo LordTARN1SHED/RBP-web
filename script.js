@@ -227,17 +227,30 @@
   const aboutCopy = document.querySelector(".about__copy");
   if (aboutCopy && !reducedMotion) {
     const aboutLines = Array.from(aboutCopy.querySelectorAll(".about__line"));
+    const aboutQuote = aboutCopy.querySelector(".about__quote");
+    const closingWords = Array.from(aboutCopy.querySelectorAll(".about__closing .rainbow-word"));
+    const aboutClosing = aboutCopy.querySelector(".about__closing");
 
-    if ("IntersectionObserver" in window && aboutLines.length > 0) {
+    if ("IntersectionObserver" in window) {
       const lineObserver = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               const lines = Array.from(entry.target.querySelectorAll(".about__line"));
-              lines.forEach((line, index) => {
+              const quote = entry.target.querySelector(".about__quote");
+              const words = Array.from(entry.target.querySelectorAll(".about__closing .rainbow-word"));
+              const closing = entry.target.querySelector(".about__closing");
+              const allElements = [...lines];
+
+              // 添加 quote 和 closing 作为独立元素
+              if (quote) allElements.push(quote);
+              allElements.push(...words);
+              if (closing) allElements.push(closing);
+
+              allElements.forEach((element, index) => {
                 setTimeout(() => {
-                  line.classList.add("line-visible");
-                  line.style.animationDelay = `${index * 0.12}s`;
+                  element.classList.add("line-visible");
+                  element.style.animationDelay = `${index * 0.12}s`;
                 }, 0);
               });
               lineObserver.unobserve(entry.target);
@@ -247,7 +260,9 @@
         { threshold: 0.2, rootMargin: "0px 0px -50px 0px" }
       );
 
-      lineObserver.observe(aboutCopy);
+      if (aboutLines.length > 0 || aboutQuote || closingWords.length > 0 || aboutClosing) {
+        lineObserver.observe(aboutCopy);
+      }
     }
   }
 

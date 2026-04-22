@@ -659,12 +659,28 @@ button {
   font-size: clamp(1.08rem, 0.96rem + 0.26vw, 1.22rem);
   font-style: normal;
   line-height: 1.92;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: lineReveal 0.9s ease-out forwards;
+  animation-play-state: paused;
+}
+
+.about__quote.line-visible {
+  animation-play-state: running;
 }
 
 .about__closing {
   font-size: clamp(1.18rem, 1rem + 0.44vw, 1.46rem);
   line-height: 1.7;
   color: var(--accent-deep);
+  opacity: 0;
+  transform: translateY(8px);
+  animation: lineReveal 0.9s ease-out forwards;
+  animation-play-state: paused;
+}
+
+.about__closing.line-visible {
+  animation-play-state: running;
 }
 
 .rainbow-word {
@@ -683,6 +699,18 @@ button {
 
 .rainbow-inline .rainbow-word {
   margin-right: 0;
+}
+
+.about__closing .rainbow-word {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: lineReveal 0.9s ease-out forwards;
+  animation-play-state: paused;
+  display: inline-flex;
+}
+
+.about__closing .rainbow-word.line-visible {
+  animation-play-state: running;
 }
 
 .rainbow-word span:nth-child(1),
