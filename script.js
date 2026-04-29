@@ -180,9 +180,12 @@
   updateHeroScroll();
   window.addEventListener("scroll", updateHeroScroll, { passive: true });
 
-  // About / Work / Contact 滚动驱动：淡入 + 淡出
+  // About / Work / Contact (主页) + What We Do / Team / Work Demo (第二页) 滚动驱动：淡入 + 淡出
   const contentSections = Array.from(
-    document.querySelectorAll(".section.about, .section.work, .section.contact")
+    document.querySelectorAll(
+      ".section.about, .section.work, .section.contact, " +
+      ".section.what-we-do, .section.team, .section.work-demo"
+    )
   );
 
   if (!reducedMotion && contentSections.length > 0) {

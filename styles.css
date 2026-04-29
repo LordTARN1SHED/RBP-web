@@ -239,6 +239,64 @@ button {
   outline: none;
 }
 
+/* ── Nav dropdown (Other) ─────────────────────────── */
+.nav-dropdown-wrap {
+  position: relative;
+}
+
+.nav-dropdown-trigger {
+  /* inherits .site-nav a styles via cascade */
+  cursor: pointer;
+  user-select: none;
+}
+
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  right: 0;
+  min-width: 164px;
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0;
+  background: rgba(255, 251, 246, 0.97);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 16px 40px rgba(28, 16, 24, 0.13);
+  backdrop-filter: blur(18px);
+  z-index: 200;
+}
+
+.nav-dropdown-menu li {
+  padding: 0;
+}
+
+.nav-dropdown-menu a {
+  display: block;
+  padding: 0.65rem 1.2rem;
+  font-family: "Manrope", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: background 140ms ease, color 140ms ease;
+  border-radius: 10px;
+  margin: 0 0.35rem;
+}
+
+.nav-dropdown-menu a:hover {
+  background: rgba(143, 69, 97, 0.1);
+  color: var(--accent-deep);
+}
+
+/* show on hover (desktop) */
+.nav-dropdown-wrap:hover .nav-dropdown-menu,
+.nav-dropdown-wrap:focus-within .nav-dropdown-menu {
+  display: block;
+}
+
 .menu-toggle {
   display: none;
   align-items: center;
@@ -442,6 +500,18 @@ button {
 .section.work,
 .section.contact {
   will-change: opacity, transform;
+}
+
+/* What We Do / Team / Work Demo — details 页滚动驱动 */
+.section.what-we-do,
+.section.team,
+.section.work-demo {
+  will-change: opacity, transform;
+}
+
+/* details 页第一个 section：顶部留出导航栏高度 + 额外间距 */
+.section.what-we-do {
+  padding-top: calc(var(--header-height) + 3rem);
 }
 
 .section__shell {
@@ -1113,6 +1183,35 @@ button {
     text-align: center;
   }
 
+  /* Mobile: flatten dropdown inline */
+  .nav-dropdown-wrap {
+    width: 100%;
+  }
+
+  .nav-dropdown-trigger {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-dropdown-menu {
+    position: static;
+    display: block;
+    box-shadow: none;
+    background: transparent;
+    border: none;
+    border-top: 1px solid var(--line);
+    border-radius: 0;
+    padding: 0.3rem 0;
+    margin-top: 0.2rem;
+    backdrop-filter: none;
+  }
+
+  .nav-dropdown-menu a {
+    font-size: 0.82rem;
+    padding: 0.5rem 1.2rem;
+    text-align: center;
+  }
+
   .menu-toggle[aria-expanded="true"] span:nth-child(1) {
     transform: translateY(6px) rotate(45deg);
   }
@@ -1207,73 +1306,33 @@ button {
     font-size: 0.9rem;
   }
 
-  .video-container {
-    aspect-ratio: 9 / 16;
+  .video-container--portrait {
+    max-width: 260px;
+    border-radius: 14px;
   }
 }
 
 /* Details Page Styling */
 
-/* What We Do Section */
-.what-we-do,
-.team,
-.work-demo {
-  opacity: 0;
-  transform: translateY(240px) scale(0.80);
-  animation: sectionFadeIn 0.9s ease-out forwards;
-}
-
-@keyframes sectionFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(240px) scale(0.80);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-.what-we-do {
-  animation-delay: 0.1s;
-}
-
-.team {
-  animation-delay: 0.3s;
-}
-
-.work-demo {
-  animation-delay: 0.5s;
-}
+/* What We Do / Team / Work Demo — animated by scroll (script.js handles opacity+transform) */
 
 .detail-content {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
-  max-width: 800px;
-  margin: 3rem auto 0;
+  gap: 0;
+  max-width: 860px;
+  margin: 2.8rem auto 0;
+  padding: 2.8rem 2.35rem 3.2rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface-strong);
+  box-shadow: var(--shadow-soft);
 }
 
 .detail-section {
   padding: 2rem 0;
   border-bottom: 1px solid rgba(88, 88, 96, 0.15);
-  opacity: 0;
-  animation: fadeIn 0.8s ease-out forwards;
 }
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.what-we-do .detail-section:nth-child(1) { animation-delay: 0.2s; }
-.what-we-do .detail-section:nth-child(2) { animation-delay: 0.35s; }
-.what-we-do .detail-section:nth-child(3) { animation-delay: 0.5s; }
-.what-we-do .detail-section:nth-child(4) { animation-delay: 0.65s; }
 
 .detail-section:last-child {
   border-bottom: none;
@@ -1307,9 +1366,6 @@ button {
   display: flex;
   justify-content: center;
   padding: 2rem 0;
-  opacity: 0;
-  animation: fadeIn 0.8s ease-out forwards;
-  animation-delay: 0.4s;
 }
 
 .team-video-section video {
@@ -1338,24 +1394,7 @@ button {
   padding: 2rem;
   transition: all 300ms ease;
   border: 1px solid rgba(58, 122, 143, 0.08);
-  opacity: 0;
-  animation: cardSlideIn 0.7s ease-out forwards;
 }
-
-@keyframes cardSlideIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.team-grid .team-card:nth-child(1) { animation-delay: 0.5s; }
-.team-grid .team-card:nth-child(2) { animation-delay: 0.65s; }
-.team-grid .team-card:nth-child(3) { animation-delay: 0.8s; }
 
 .team-card:hover {
   transform: translateY(-8px);
@@ -1425,9 +1464,13 @@ button {
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(15, 10, 12, 0.12);
   transition: box-shadow 300ms ease;
-  opacity: 0;
-  animation: fadeIn 0.8s ease-out forwards;
-  animation-delay: 0.7s;
+}
+
+/* Portrait (vertical) video override */
+.video-container--portrait {
+  aspect-ratio: 1206 / 2622;
+  max-width: 380px;
+  border-radius: 20px;
 }
 
 .video-container:hover {
@@ -1437,7 +1480,9 @@ button {
 .video-container video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  background: #000;
+  border-radius: inherit;
 }
 
 .demo-description {
@@ -1447,9 +1492,6 @@ button {
   color: rgba(88, 88, 96, 0.8);
   max-width: 700px;
   text-align: center;
-  opacity: 0;
-  animation: fadeIn 0.8s ease-out forwards;
-  animation-delay: 0.85s;
 }
 
 /* Detail Button Styling */
