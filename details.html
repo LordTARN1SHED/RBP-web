@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Learn more about Rainbow Petopia - our mission, team, and memorial world demo."
+  />
+  <meta name="theme-color" content="#efe7dc" />
+  <title>About Rainbow Petopia - Details</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Forum&family=Manrope:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+  </script>
+  <script defer src="config.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="page-backdrop" aria-hidden="true">
+    <div class="page-backdrop__image"></div>
+    <div class="page-backdrop__glow page-backdrop__glow--left"></div>
+    <div class="page-backdrop__glow page-backdrop__glow--right"></div>
+    <div class="page-backdrop__veil"></div>
+  </div>
+
+  <header class="site-header" data-header>
+    <div class="site-header__shell">
+      <a class="brand" href="index.html#top">
+        <span class="brand-word" aria-label="Rainbow Petopia">
+          <span>R</span><span>a</span><span>i</span><span>n</span><span>b</span><span>o</span><span>w</span>
+          <span class="brand-word__gap"></span>
+          <span>P</span><span>e</span><span>t</span><span>o</span><span>p</span><span>i</span><span>a</span>
+        </span>
+      </a>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        data-menu-toggle
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+      <nav class="site-nav" id="site-nav" data-nav>
+        <a href="index.html#top" data-nav-link>Home</a>
+        <a href="index.html#about" data-nav-link>About Us</a>
+        <a href="index.html#work" data-nav-link>Our Work</a>
+        <a href="index.html#contact" data-nav-link>Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- What We Do Section -->
+    <section class="section section-anchor what-we-do" id="what-we-do" data-section="what-we-do">
+      <div class="section__shell">
+        <div class="section-banner section-banner--sky section-banner--about">
+          <img
+            class="section-banner__image"
+            src="assets/images/about.jpg"
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+          />
+          <div class="section-banner__veil"></div>
+          <div class="section-banner__content">
+            <h2>WHAT WE DO</h2>
+            <p class="section-banner__subcopy">A gentle world you can return to.</p>
+          </div>
+        </div>
+
+        <div class="detail-content">
+          <div class="detail-section">
+            <h3>What we're building</h3>
+            <p>Rainbow Petopia is a private-first, returnable memorial world for pet parents. Users can save memories, write letters, and receive gentle, bounded AI replies—without denying loss.</p>
+          </div>
+
+          <div class="detail-section">
+            <h3>Stage</h3>
+            <p>Prototype iOS build + recorded demo. Closed pilot list confirmed; invite-only pilot launching next.</p>
+          </div>
+
+          <div class="detail-section">
+            <h3>Not revival / Not therapy</h3>
+            <p>We don't claim pet revival or spiritual communication. This is a memorial/reflection experience, not therapy or medical advice.</p>
+          </div>
+
+          <div class="detail-section">
+            <h3>Where love continues, memories grow</h3>
+            <p>Rainbow Petopia is a gentle world you can return to when grief resurfaces—private by default, and always at your pace.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section section-anchor team" id="team" data-section="team">
+      <div class="section__shell">
+        <div class="section-banner section-banner--sky section-banner--team">
+          <img
+            class="section-banner__image"
+            src="assets/images/about.jpg"
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+          />
+          <div class="section-banner__veil"></div>
+          <div class="section-banner__content">
+            <h2>OUR TEAM</h2>
+            <p class="section-banner__subcopy">The people building Rainbow Petopia.</p>
+          </div>
+        </div>
+
+        <div class="team-content">
+          <div class="team-video-section">
+            <video width="100%" height="auto" controls style="border-radius: 8px; max-width: 600px; margin: 0 auto; display: block;">
+              <source src="founderphoto/Rainbow Petopia teammember introduction.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <div class="team-grid">
+            <article class="team-card">
+              <img src="founderphoto/Aoki.JPG" alt="Aoki Hua" class="team-card__image" />
+              <div class="team-card__content">
+                <h3>Aoki Hua</h3>
+                <p class="team-card__role">Founder & CEO</p>
+                <p class="team-card__bio">Aoki started Rainbow Petopia after losing her own beloved pet. She shapes the world and the experience with one goal: to give people a quiet place they can return to when grief comes back.</p>
+              </div>
+            </article>
+
+            <article class="team-card">
+              <img src="founderphoto/Zhexi.JPG" alt="Zhexi Feng" class="team-card__image" />
+              <div class="team-card__content">
+                <h3>Zhexi Feng</h3>
+                <p class="team-card__role">Co-founder & CTO</p>
+                <p class="team-card__bio">Zhexi builds the app and the technology behind it. He focuses on making the experience feel steady, safe, and respectful—so it stays gentle even as it grows.</p>
+              </div>
+            </article>
+
+            <article class="team-card">
+              <img src="founderphoto/Kuan.JPG" alt="Kuan Chang" class="team-card__image" />
+              <div class="team-card__content">
+                <h3>Kuan Chang</h3>
+                <p class="team-card__role">Co-founder & COO</p>
+                <p class="team-card__bio">Kuan helps turn care into real progress. He listens closely to users across the US and China, builds the early community, and makes sure what we create is something people can truly come back to.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Demo Section -->
+    <section class="section section-anchor work-demo" id="work-demo" data-section="work-demo">
+      <div class="section__shell">
+        <div class="section-banner section-banner--sky section-banner--demo">
+          <img
+            class="section-banner__image"
+            src="assets/images/about.jpg"
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+          />
+          <div class="section-banner__veil"></div>
+          <div class="section-banner__content">
+            <h2>WORK DEMO</h2>
+            <p class="section-banner__subcopy">Experience the memorial world.</p>
+          </div>
+        </div>
+
+        <div class="demo-content">
+          <div class="video-container">
+            <video width="100%" height="auto" controls style="border-radius: 8px;">
+              <source src="founderphoto/demo.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p class="demo-description">This is a walkthrough of Rainbow Petopia's memorial world, showcasing the gentle interface and features designed for remembrance and reflection.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__shell">
+      <p>Rainbow Petopia</p>
+      <p>&copy; <span data-year></span> Rainbow Petopia. Built for independent hosting.</p>
+    </div>
+  </footer>
+</body>
+</html>

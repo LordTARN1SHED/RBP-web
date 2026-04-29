@@ -1189,6 +1189,315 @@ button {
     flex-direction: column;
     align-items: flex-start;
   }
+
+  /* Details Page Responsive */
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .detail-section h3,
+  .team-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .detail-section p,
+  .team-card__bio,
+  .demo-description {
+    font-size: 0.9rem;
+  }
+
+  .video-container {
+    aspect-ratio: 9 / 16;
+  }
+}
+
+/* Details Page Styling */
+
+/* What We Do Section */
+.what-we-do,
+.team,
+.work-demo {
+  opacity: 0;
+  transform: translateY(240px) scale(0.80);
+  animation: sectionFadeIn 0.9s ease-out forwards;
+}
+
+@keyframes sectionFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(240px) scale(0.80);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.what-we-do {
+  animation-delay: 0.1s;
+}
+
+.team {
+  animation-delay: 0.3s;
+}
+
+.work-demo {
+  animation-delay: 0.5s;
+}
+
+.detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  max-width: 800px;
+  margin: 3rem auto 0;
+}
+
+.detail-section {
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(88, 88, 96, 0.15);
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.what-we-do .detail-section:nth-child(1) { animation-delay: 0.2s; }
+.what-we-do .detail-section:nth-child(2) { animation-delay: 0.35s; }
+.what-we-do .detail-section:nth-child(3) { animation-delay: 0.5s; }
+.what-we-do .detail-section:nth-child(4) { animation-delay: 0.65s; }
+
+.detail-section:last-child {
+  border-bottom: none;
+}
+
+.detail-section h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.3rem, 1rem + 0.8vw, 1.8rem);
+  font-weight: 600;
+  color: #3a7a8f;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.detail-section p {
+  font-family: "Manrope", sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(88, 88, 96, 0.8);
+}
+
+/* Team Section */
+.team-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-top: 3rem;
+}
+
+.team-video-section {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+.team-video-section video {
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(15, 10, 12, 0.12);
+  transition: box-shadow 300ms ease;
+}
+
+.team-video-section video:hover {
+  box-shadow: 0 30px 60px rgba(15, 10, 12, 0.18);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+.team-card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 300ms ease;
+  border: 1px solid rgba(58, 122, 143, 0.08);
+  opacity: 0;
+  animation: cardSlideIn 0.7s ease-out forwards;
+}
+
+@keyframes cardSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.team-grid .team-card:nth-child(1) { animation-delay: 0.5s; }
+.team-grid .team-card:nth-child(2) { animation-delay: 0.65s; }
+.team-grid .team-card:nth-child(3) { animation-delay: 0.8s; }
+
+.team-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 48px rgba(15, 10, 12, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.team-card__image {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.team-card__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.team-card h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #3a7a8f;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.team-card__role {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8B6F47;
+  margin-bottom: 1rem;
+}
+
+.team-card__bio {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(88, 88, 96, 0.75);
+  flex-grow: 1;
+}
+
+/* Work Demo Section */
+.demo-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.video-container {
+  width: 100%;
+  max-width: 900px;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(15, 10, 12, 0.12);
+  transition: box-shadow 300ms ease;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out forwards;
+  animation-delay: 0.7s;
+}
+
+.video-container:hover {
+  box-shadow: 0 30px 60px rgba(15, 10, 12, 0.18);
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.demo-description {
+  font-family: "Manrope", sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(88, 88, 96, 0.8);
+  max-width: 700px;
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out forwards;
+  animation-delay: 0.85s;
+}
+
+/* Detail Button Styling */
+.section-action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.detail-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.8rem;
+  padding: 1.05rem 2rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #f7e7da 0%, #dbb79b 100%);
+  color: #8B6F47;
+  font-family: "Manrope", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 2px solid rgba(42, 22, 33, 0.15);
+  box-shadow:
+    0 24px 48px rgba(15, 10, 12, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    filter 180ms ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.detail-button:hover,
+.detail-button:focus-visible {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+  box-shadow:
+    0 32px 56px rgba(15, 10, 12, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  outline: none;
+}
+
+.detail-button:active {
+  transform: translateY(0);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1203,5 +1512,18 @@ button {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  /* Details page animations */
+  .what-we-do,
+  .team,
+  .work-demo,
+  .detail-section,
+  .team-card,
+  .team-video-section,
+  .video-container,
+  .demo-description {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
