@@ -1529,9 +1529,10 @@ button {
   aspect-ratio: 16 / 9;
 }
 
-/* 竖屏 9:16（Shorts demo） */
+/* 竖屏 Shorts demo — 宽度用 min() 在桌面端放大，移动端不撑破屏 */
 .yt-container--portrait {
-  max-width: 360px;
+  width: min(500px, 88vw);
+  max-width: none;
   aspect-ratio: 9 / 16;
   border-radius: 20px;
   margin: 0 auto;
