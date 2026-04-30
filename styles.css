@@ -1406,9 +1406,15 @@ button {
   width: 100%;
   aspect-ratio: 1;
   object-fit: cover;
+  object-position: center 20%;
   border-radius: 12px;
   margin-bottom: 1.5rem;
   display: block;
+}
+
+/* 头部偏高的照片，取景框往更上移 */
+.team-card__image--top {
+  object-position: center 8%;
 }
 
 .team-card__content {
